@@ -1,4 +1,4 @@
-# callibri
+# colibri
 
 ## Project setup
 ```
