@@ -1,0 +1,55 @@
+.header {
+  padding: 33px 0;
+}
+
+.header__wrapper {
+  @include wrapper;
+  align-items: center;
+}
+
+.header__logo-url {
+  display: block;
+  margin-right: auto;
+}
+
+.header_navigation {
+  margin-left: 20px;
+}
+
+.header__menu {
+  list-style-type: none;
+  margin: 0 80px 0 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.header_menu-item {
+  display: inline-block;
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.header__menu-url {
+  display: inline-block;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: 20px;
+  font-weight: $semibold;
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+.header__contact-btn {
+  display: inline-block;
+  color: $brand-color;
+  font-family: $font-family-base;
+  font-size: 20px;
+  font-weight: $semibold;
+  margin: 0;
+  border-bottom: 2px solid $brand-color;
+  padding-left: 10px;
+  letter-spacing: 0.1em;
+}

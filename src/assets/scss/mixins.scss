@@ -1,0 +1,7 @@
+@mixin wrapper() {
+  display: flex;
+  flex-direction: row;
+  max-width: 1396px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
