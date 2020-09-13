@@ -1,0 +1,10 @@
+.services {
+  background-color: $white;
+  padding: 100px 0;
+  margin-bottom: 200px;
+}
+
+.services__wrapper {
+  @include wrapper;
+  justify-content: space-between;
+}

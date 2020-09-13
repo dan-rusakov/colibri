@@ -1,0 +1,32 @@
+.service {
+  width: 360px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.service__icon {
+  margin-right: 25px;
+  fill: $brand-color;
+}
+
+.service__title {
+  font-family: $font-family-base;
+  font-size: 22px;
+  font-weight: $bold;
+  line-height: 1.18;
+  width: calc(100% - 85px);
+  letter-spacing: 0.05em;
+  color: $text-color;
+  margin: 0;
+}
+
+.service__text {
+  margin: 30px 0 0;
+  font-family: $font-family-base;
+  font-size: 16px;
+  font-weight: $semibold;
+  line-height: 1.187;
+  color: $gray;
+  letter-spacing: 0.05em;
+}
