@@ -1,0 +1,87 @@
+.price-list {
+  &--home-page {
+    margin-bottom: 200px;
+  }
+}
+
+.price-list__wrapper {
+  @include wrapper;
+}
+
+.price-list__list {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 560px 560px;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  grid-gap: 25px;
+}
+
+.price-list__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.price-list__right-box {
+  flex-shrink: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.price-list__name {
+  font-family: $font-family-base;
+  font-weight: $bold;
+  color: $text-color;
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.price-list__description {
+  font-family: $font-family-base;
+  font-weight: $semibold;
+  color: $gray;
+  line-height: 1.14;
+  margin: 0;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+}
+
+.price-list__price {
+  font-family: $font-family-base;
+  font-weight: $bold;
+  color: $text-color;
+  line-height: 1;
+  margin: 0;
+  font-size: 35px;
+  letter-spacing: 0.05em;
+}
+
+.price-list__price-description {
+  font-family: $font-family-base;
+  font-weight: $semibold;
+  color: $gray;
+  line-height: 1;
+  margin: 0 0 3px 7px;
+  letter-spacing: 0.05em;
+  font-size: 18px;
+}
+
+.price-list__more-btn {
+  display: inline-block;
+  color: $brand-color;
+  font-family: $font-family-base;
+  font-size: 20px;
+  font-weight: $semibold;
+  margin: 0;
+  border-bottom: 2px solid $brand-color;
+  letter-spacing: 0.05em;
+  align-self: center;
+  padding-right: 10px;
+}
