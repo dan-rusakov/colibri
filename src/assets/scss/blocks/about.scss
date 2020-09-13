@@ -1,0 +1,80 @@
+.about__wrapper {
+  @include wrapper;
+  justify-content: space-between;
+}
+
+.about__gallery .swiper-container {
+  width: 560px;
+  height: 373px;
+  border-radius: 50px;
+  overflow: hidden;
+
+  &:hover .about__gallery-btn-arrow,
+  &:focus .about__gallery-btn-arrow {
+    opacity: 1;
+  }
+}
+
+.about__gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__content {
+  width: 600px;
+}
+
+.about__title {
+  font-family: $font-family-base;
+  font-weight: $bold;
+  color: $text-color;
+  font-size: 48px;
+  line-height: 1.25;
+  letter-spacing: 0.05em;
+  margin: 0 0 40px;
+}
+
+.about__text {
+  font-family: $font-family-base;
+  font-weight: $semibold;
+  color: $gray;
+  font-size: 18px;
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.about__more-btn {
+  display: inline-block;
+  color: $brand-color;
+  font-family: $font-family-base;
+  font-size: 20px;
+  font-weight: $semibold;
+  margin: 10px 0 0;
+  border-bottom: 2px solid $brand-color;
+  padding-right: 10px;
+  letter-spacing: 0.05em;
+}
+
+.about__gallery-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+
+  &--left {
+    left: 10px;
+    transform: translateY(-50%);
+  }
+
+  &--right {
+    right: 10px;
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+.about__gallery-btn-arrow {
+  fill: $brand-color;
+  opacity: 0;
+  transition: .25s opacity ease;
+}
