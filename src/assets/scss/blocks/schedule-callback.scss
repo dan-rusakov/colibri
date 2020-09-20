@@ -1,0 +1,61 @@
+.schedule-callback {
+  width: 560px;
+  max-width: 100%;
+  border-radius: 20px;
+  border: 3px solid $brand-color;
+  padding: 43px 46px 41px;
+}
+
+.schedule-callback__title {
+  font-family: $font-family-base;
+  font-weight: $bold;
+  color: $text-color;
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  letter-spacing: 0.05em;
+}
+
+.schedule-callback__description {
+  font-family: $font-family-base;
+  font-weight: $bold;
+  color: $gray;
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 0 0 28px;
+  letter-spacing: 0.05em;
+}
+
+.schedule-callback__input {
+  padding: 12px 24px 10px;
+  background-color: $white;
+  border: none;
+  border-radius: 42px;
+  display: block;
+  width: 310px;
+  max-width: 100%;
+  margin: 0 0 32px;
+  font-family: $font-family-base;
+  font-weight: $semibold;
+  color: $text-color;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+
+  &::placeholder {
+    color: $gray;
+  }
+}
+
+.schedule-callback__submit-btn {
+  font-family: $font-family-base;
+  font-weight: $semibold;
+  color: $white;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  padding: 11px 40px;
+  border: none;
+  border-radius: 42px;
+  background-color: $brand-color;
+}
