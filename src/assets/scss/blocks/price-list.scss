@@ -6,6 +6,7 @@
 
 .price-list__wrapper {
   @include wrapper;
+  flex-direction: column;
 }
 
 .price-list__list {
@@ -84,4 +85,14 @@
   letter-spacing: 0.05em;
   align-self: center;
   padding-right: 10px;
+}
+
+.price-list__title {
+  font-family: $font-family-base;
+  font-weight: $bold;
+  color: $text-color;
+  line-height: 1.18;
+  margin: 0 0 50px;
+  letter-spacing: 0.05em;
+  font-size: 48px;
 }

@@ -208,6 +208,43 @@
         </div>
       </div>
     </section>
+    <section class="price-list price-list--home-page">
+      <div class="price-list__wrapper">
+        <h2 class="price-list__title">Прайс-лист</h2>
+        <ul class="price-list__list">
+          <li class="price-list__item">
+            <div class="price-list__left-box">
+              <p class="price-list__name">Групповые занятия</p>
+              <p class="price-list__description">пн, ср - 19:00</p>
+            </div>
+            <div class="price-list__right-box">
+              <p class="price-list__price">3600</p>
+              <p class="price-list__price-description">р/мес</p>
+            </div>
+          </li>
+          <li class="price-list__item">
+            <div class="price-list__left-box">
+              <p class="price-list__name">Групповые занятия</p>
+              <p class="price-list__description">пн, ср - 19:00</p>
+            </div>
+            <div class="price-list__right-box">
+              <p class="price-list__price">3600</p>
+              <p class="price-list__price-description">р/мес</p>
+            </div>
+          </li>
+          <li class="price-list__item">
+            <div class="price-list__left-box">
+              <p class="price-list__name">Групповые занятия</p>
+              <p class="price-list__description">пн, ср - 19:00</p>
+            </div>
+            <div class="price-list__right-box">
+              <p class="price-list__price">3600</p>
+              <p class="price-list__price-description">р/мес</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
     <Footer />
     <svg style="display: none">
       <defs>
