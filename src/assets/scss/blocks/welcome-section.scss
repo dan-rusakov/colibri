@@ -13,6 +13,7 @@
   top: -115px;
   right: -80px;
   pointer-events: none;
+  z-index: -1;
 }
 
 .welcome-section__title {
@@ -41,4 +42,81 @@
   line-height: 1.19;
   letter-spacing: 0.1em;
   margin-top: 12px;
+}
+
+@include screen-md {
+  .welcome-section__title {
+    margin-top: 220px;
+    font-size: 54px;
+  }
+
+  .welcome-section__contacts {
+    margin: 150px 0 0;
+  }
+
+  .welcome-section__contacts-item {
+    font-size: 20px;
+  }
+
+  .welcome-section__ribbon {
+    width: 700px;
+  }
+}
+
+@include screen-sm {
+  .welcome-section {
+    margin-bottom: 160px;
+  }
+
+  .welcome-section__title {
+    margin-top: 190px;
+  }
+
+  .welcome-section__ribbon {
+    width: 650px;
+  }
+}
+
+@include tablet-lg {
+  .welcome-section__title {
+    font-size: 50px;
+    max-width: 480px;
+    margin-top: 150px;
+  }
+
+  .welcome-section__contacts {
+    margin: 40px 0 0;
+  }
+
+  .welcome-section {
+    margin-bottom: 280px;
+  }
+}
+
+@include tablet-md {
+  .welcome-section__title {
+    font-size: 46px;
+  }
+
+  .welcome-section__ribbon {
+    top: -25px;
+  }
+
+  .welcome-section__contacts {
+    margin: 30px 0 0;
+  }
+}
+
+@include tablet-sm {
+  .welcome-section__title {
+    font-size: 32px;
+  }
+
+  .welcome-section__ribbon {
+    top: 100px;
+  }
+
+  .welcome-section {
+    margin-bottom: 250px;
+  }
 }

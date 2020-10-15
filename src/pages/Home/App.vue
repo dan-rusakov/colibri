@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="main">
     <Header />
     <section class="welcome-section">
       <div class="welcome-section__wrapper">

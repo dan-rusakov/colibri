@@ -3,7 +3,9 @@
 @import "./base";
 @import "./variables";
 @import "./mixins";
+@import "./animations";
 
+@import "./blocks/main";
 @import "./blocks/header";
 @import "./blocks/welcome-section";
 @import "./blocks/about";

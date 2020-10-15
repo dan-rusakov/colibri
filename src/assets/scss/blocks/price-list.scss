@@ -96,3 +96,57 @@
   letter-spacing: 0.05em;
   font-size: 48px;
 }
+
+@include screen-sm {
+  .price-list--home-page {
+    margin-bottom: 160px;
+  }
+
+  .price-list__list {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 35px 45px;
+  }
+}
+
+@include tablet-lg {
+  .price-list__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@include tablet-md {
+  .price-list--home-page {
+    margin-bottom: 130px;
+  }
+}
+
+@include tablet-sm {
+  .price-list__name {
+    font-size: 16px;
+  }
+
+  .price-list__description {
+    font-size: 14px;
+  }
+
+  .price-list__price-description {
+    font-size: 14px;
+    margin: 0 0 3px 3px;
+  }
+
+  .price-list__price {
+    font-size: 28px;
+  }
+
+  .price-list__left-box {
+    margin-right: 15px;
+  }
+
+  .price-list__more-btn {
+    font-size: 18px;
+  }
+
+  .price-list--home-page {
+    margin-bottom: 100px;
+  }
+}

@@ -10,9 +10,11 @@
 .header__logo-url {
   display: block;
   margin-right: auto;
+  position: relative;
+  z-index: 2;
 }
 
-.header_navigation {
+.header__navigation {
   margin-left: 20px;
 }
 
@@ -23,7 +25,7 @@
   display: inline-block;
 }
 
-.header_menu-item {
+.header__menu-item {
   display: inline-block;
   margin-right: 40px;
 
@@ -52,4 +54,119 @@
   border-bottom: 2px solid $brand-color;
   padding-left: 10px;
   letter-spacing: 0.1em;
+}
+
+.header__burger {
+  width: 28px;
+  border: none;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 2;
+  display: none;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: $text-color;
+    top: 0;
+    left: 0;
+    transition: .25s transform ease;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: $text-color;
+    bottom: 0;
+    left: 0;
+    transition: .25s transform ease;
+  }
+
+  &--active {
+    .header__burger-line {
+      opacity: 0;
+    }
+
+    &::before {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    &::after {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
+  }
+}
+
+.header__burger-line {
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  background-color: $text-color;
+  display: block;
+  top: 8px;
+  left: 0;
+  transition: .25s opacity ease;
+}
+
+.header__mobile-menu-wrap {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  padding: 110px 30px 30px;
+  text-align: center;
+  z-index: 1;
+}
+
+.header__mobile-menu {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.header__mobile-menu-item {
+  margin-bottom: 15px;
+}
+
+.header__mobile-menu-url {
+  display: inline-block;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: 20px;
+  font-weight: $semibold;
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+@include tablet-lg {
+  .header__menu {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+  }
+
+  .header__contact-btn {
+    display: none;
+
+    &--mobile {
+      display: inline-block;
+      padding-left: 0;
+    }
+  }
+}
+
+@include tablet-sm {
+  .header {
+    padding: 25px 0;
+  }
 }

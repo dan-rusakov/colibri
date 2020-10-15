@@ -39,3 +39,21 @@
   fill: #2E283D;
   display: block;
 }
+
+@include tablet-sm {
+  .footer__soc-box-item {
+    margin-left: 15px;
+  }
+
+  .footer__copyright {
+    font-size: 18px;
+  }
+
+  .footer__wrapper {
+    padding-top: 20px;
+  }
+
+  .footer {
+    padding-bottom: 20px;
+  }
+}
