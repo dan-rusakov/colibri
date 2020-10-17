@@ -7,13 +7,13 @@
       <nav class="header__navigation">
         <ul class="header__menu">
           <li class="header__menu-item">
-            <a href="#!" class="header__menu-url">О нас</a>
+            <a href="/about" class="header__menu-url">О нас</a>
           </li>
           <li class="header__menu-item">
-            <a href="#!" class="header__menu-url">Услуги</a>
+            <a href="/#services" class="header__menu-url">Услуги</a>
           </li>
           <li class="header__menu-item">
-            <a href="#!" class="header__menu-url">Расписание и цены</a>
+            <a href="/schedule" class="header__menu-url">Расписание и цены</a>
           </li>
         </ul>
         <button
@@ -47,13 +47,13 @@
         <div class="header__mobile-menu-wrap" v-if="mobileMenuOpened">
           <ul class="header__mobile-menu">
             <li class="header__mobile-menu-item">
-              <a href="#!" class="header__mobile-menu-url">О нас</a>
+              <a href="/about" class="header__mobile-menu-url">О нас</a>
             </li>
             <li class="header__mobile-menu-item">
-              <a href="#!" class="header__mobile-menu-url">Услуги</a>
+              <a href="/#services" class="header__mobile-menu-url">Услуги</a>
             </li>
             <li class="header__mobile-menu-item">
-              <a href="#!" class="header__mobile-menu-url">Расписание и цены</a>
+              <a href="/schedule" class="header__mobile-menu-url">Расписание и цены</a>
             </li>
           </ul>
           <button

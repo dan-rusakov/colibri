@@ -43,7 +43,7 @@
         </div>
       </div>
     </section>
-    <section class="services">
+    <section class="services" id="services">
       <div class="services__wrapper">
         <article class="service">
           <svg class="service__icon" width="60" height="60">
