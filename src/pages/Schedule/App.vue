@@ -5,102 +5,105 @@
       <div class="schedule-section__wrapper">
         <h2 class="schedule-section__title">Расписание</h2>
         <div class="schedule-section__filters">
-          <div class="schedule-section__filter">
-            <p class="schedule-section__filter-name">Тренер</p>
-            <multiselect
-              v-model="trainersValue"
-              :options="trainersList"
-              :searchable="false"
-              :close-on-select="true"
-              :show-labels="false"
-              track-by="id"
-              label="title"
-              placeholder="Выбрать"
-              class="schedule-section__multiselect"
-            >
-              <template slot="option" slot-scope="props">
-                <p class="schedule-section__option-text">{{props.option.title}}</p>
-              </template>
-              <template slot="caret">
-                <svg class="schedule-section__arrow" width="14" height="14">
-                  <use xlink:href="#icon-arrow-left"/>
-                </svg>
-              </template>
-            </multiselect>
+          <div class="schedule-section__filters-box">
+            <div class="schedule-section__filter">
+              <p class="schedule-section__filter-name">Тренер</p>
+              <multiselect
+                v-model="trainersValue"
+                :options="trainersList"
+                :searchable="false"
+                :close-on-select="true"
+                :show-labels="false"
+                track-by="id"
+                label="title"
+                placeholder="Выбрать"
+                class="schedule-section__multiselect"
+              >
+                <template slot="option" slot-scope="props">
+                  <p class="schedule-section__option-text">{{props.option.title}}</p>
+                </template>
+                <template slot="caret">
+                  <svg class="schedule-section__arrow" width="14" height="14">
+                    <use xlink:href="#icon-arrow-left"/>
+                  </svg>
+                </template>
+              </multiselect>
+            </div>
+            <div class="schedule-section__filter">
+              <p class="schedule-section__filter-name">Группа</p>
+              <multiselect
+                v-model="groupValue"
+                :options="groupList"
+                :searchable="false"
+                :close-on-select="true"
+                :show-labels="false"
+                track-by="id"
+                label="title"
+                placeholder="Выбрать"
+                class="schedule-section__multiselect"
+              >
+                <template slot="option" slot-scope="props">
+                  <p class="schedule-section__option-text">{{props.option.title}}</p>
+                </template>
+                <template slot="caret">
+                  <svg class="schedule-section__arrow" width="14" height="14">
+                    <use xlink:href="#icon-arrow-left"/>
+                  </svg>
+                </template>
+              </multiselect>
+            </div>
+            <div class="schedule-section__filter">
+              <p class="schedule-section__filter-name">Время (после)</p>
+              <multiselect
+                v-model="timeAfterValue"
+                :options="timeAfterList"
+                :searchable="false"
+                :close-on-select="true"
+                :show-labels="false"
+                track-by="id"
+                label="title"
+                placeholder="Выбрать"
+                class="schedule-section__multiselect"
+              >
+                <template slot="option" slot-scope="props">
+                  <p class="schedule-section__option-text">{{props.option.title}}</p>
+                </template>
+                <template slot="caret">
+                  <svg class="schedule-section__arrow" width="14" height="14">
+                    <use xlink:href="#icon-arrow-left"/>
+                  </svg>
+                </template>
+              </multiselect>
+            </div>
+            <div class="schedule-section__filter">
+              <p class="schedule-section__filter-name">Время (до)</p>
+              <multiselect
+                v-model="timeBeforeValue"
+                :options="timeBeforeList"
+                :searchable="false"
+                :close-on-select="true"
+                :show-labels="false"
+                track-by="id"
+                label="title"
+                placeholder="Выбрать"
+                class="schedule-section__multiselect"
+              >
+                <template slot="option" slot-scope="props">
+                  <p class="schedule-section__option-text">{{props.option.title}}</p>
+                </template>
+                <template slot="caret">
+                  <svg class="schedule-section__arrow" width="14" height="14">
+                    <use xlink:href="#icon-arrow-left"/>
+                  </svg>
+                </template>
+              </multiselect>
+            </div>
           </div>
-          <div class="schedule-section__filter">
-            <p class="schedule-section__filter-name">Группа</p>
-            <multiselect
-              v-model="groupValue"
-              :options="groupList"
-              :searchable="false"
-              :close-on-select="true"
-              :show-labels="false"
-              track-by="id"
-              label="title"
-              placeholder="Выбрать"
-              class="schedule-section__multiselect"
-            >
-              <template slot="option" slot-scope="props">
-                <p class="schedule-section__option-text">{{props.option.title}}</p>
-              </template>
-              <template slot="caret">
-                <svg class="schedule-section__arrow" width="14" height="14">
-                  <use xlink:href="#icon-arrow-left"/>
-                </svg>
-              </template>
-            </multiselect>
-          </div>
-          <div class="schedule-section__filter">
-            <p class="schedule-section__filter-name">Время (после)</p>
-            <multiselect
-              v-model="timeAfterValue"
-              :options="timeAfterList"
-              :searchable="false"
-              :close-on-select="true"
-              :show-labels="false"
-              track-by="id"
-              label="title"
-              placeholder="Выбрать"
-              class="schedule-section__multiselect"
-            >
-              <template slot="option" slot-scope="props">
-                <p class="schedule-section__option-text">{{props.option.title}}</p>
-              </template>
-              <template slot="caret">
-                <svg class="schedule-section__arrow" width="14" height="14">
-                  <use xlink:href="#icon-arrow-left"/>
-                </svg>
-              </template>
-            </multiselect>
-          </div>
-          <div class="schedule-section__filter">
-            <p class="schedule-section__filter-name">Время (до)</p>
-            <multiselect
-              v-model="timeBeforeValue"
-              :options="timeBeforeList"
-              :searchable="false"
-              :close-on-select="true"
-              :show-labels="false"
-              track-by="id"
-              label="title"
-              placeholder="Выбрать"
-              class="schedule-section__multiselect"
-            >
-              <template slot="option" slot-scope="props">
-                <p class="schedule-section__option-text">{{props.option.title}}</p>
-              </template>
-              <template slot="caret">
-                <svg class="schedule-section__arrow" width="14" height="14">
-                  <use xlink:href="#icon-arrow-left"/>
-                </svg>
-              </template>
-            </multiselect>
-          </div>
-          <button class="schedule-section__reset-btn">
+          <button class="schedule-section__reset-btn" title="Сбросить фильтры">
             <svg class="schedule-section__reset-icon" width="12" height="12">
               <use xlink:href="#icon-close"/>
             </svg>
+            <span class="schedule-section__reset-btn-text">Сбросить</span>
           </button>
         </div>
         <div class="schedule-section__days-box">

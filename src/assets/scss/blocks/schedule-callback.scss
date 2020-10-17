@@ -32,8 +32,8 @@
   border: none;
   border-radius: 42px;
   display: block;
-  width: 310px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 310px;
   margin: 0 0 32px;
   font-family: $font-family-base;
   font-weight: $semibold;
@@ -58,4 +58,58 @@
   border: none;
   border-radius: 42px;
   background-color: $brand-color;
+}
+
+@include screen-md {
+  .schedule-callback {
+    width: 100%;
+  }
+}
+
+@include screen-sm {
+  .schedule-callback {
+    padding: 33px 36px 31px;
+  }
+
+  .schedule-callback__title {
+    font-size: 20px;
+  }
+
+  .schedule-callback__description {
+    font-size: 16px;
+    margin: 0 0 20px 0;
+  }
+
+  .schedule-callback__input {
+    margin: 0 0 25px;
+  }
+}
+
+@include tablet-lg {
+  .schedule-callback {
+    max-width: 450px;
+  }
+}
+
+@include tablet-sm {
+  .schedule-callback {
+    padding: 23px;
+  }
+
+  .schedule-callback__title {
+    font-size: 18px;
+  }
+
+  .schedule-callback__description {
+    font-size: 14px;
+    margin: 0 0 25px;
+  }
+
+  .schedule-callback__submit-btn {
+    font-size: 14px;
+  }
+
+  .schedule-section {
+    margin-bottom: 80px;
+  }
 }

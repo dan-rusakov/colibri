@@ -15,7 +15,7 @@
   font-size: 48px;
   line-height: 1.25;
   letter-spacing: 0.05em;
-  margin: 0 0 60px;
+  margin: 0 0 30px;
 }
 
 .schedule-section__filters {
@@ -23,7 +23,6 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  flex-wrap: wrap;
   padding-bottom: 40px;
   border-bottom: 2px solid $white;
   margin-bottom: 30px;
@@ -34,6 +33,7 @@
   display: inline-block;
   max-width: 100%;
   margin-right: 30px;
+  margin-top: 30px;
 }
 
 .schedule-section__filter-name {
@@ -127,8 +127,15 @@
   height: 42px;
   background-color: $white;
   border-radius: 42px;
-  align-self: flex-end;
+  align-self: flex-start;
   position: relative;
+  margin-left: auto;
+  flex-shrink: 0;
+  margin-top: 58px;
+}
+
+.schedule-section__reset-btn-text {
+  display: none;
 }
 
 .schedule-section__reset-icon {
@@ -225,4 +232,134 @@
   line-height: 1.25;
   margin: 0 0 30px;
   letter-spacing: 0.05em;
+}
+
+@include screen-md {
+  .schedule-section__days-box {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px 50px;
+  }
+
+  .schedule-section__day {
+    width: 100%;
+  }
+}
+
+@include screen-sm {
+  .schedule-section__days-box {
+    grid-gap: 35px 35px;
+  }
+
+  .schedule-section__class-name {
+    font-size: 16px;
+  }
+
+  .schedule-section__class-time {
+    font-size: 20px;
+    margin: 0 20px 0 0;
+  }
+
+  .schedule-section__day-name {
+    font-size: 22px;
+    margin: 0 0 20px;
+  }
+
+  .schedule-section__exception-date {
+    font-size: 20px;
+    margin: 0 0 20px;
+  }
+
+  .schedule-section__title {
+    font-size: 42px;
+    margin: 0 0 20px;
+  }
+
+  .schedule-section {
+    padding-top: 120px;
+  }
+}
+
+@include tablet-lg {
+  .schedule-section__days-box {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-section {
+    padding-top: 80px;
+  }
+
+  .schedule-section__title {
+    font-size: 38px;
+  }
+}
+
+@include tablet-sm {
+  .schedule-section {
+    padding-top: 60px;
+  }
+
+  .schedule-section__title {
+    margin: 0;
+    font-size: 32px;
+  }
+
+  .schedule-section__filter {
+    margin-top: 25px;
+  }
+
+  .schedule-section__reset-btn {
+    margin-top: 53px;
+  }
+
+  .schedule-section__class {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .schedule-section__class-name {
+    margin: 0 0 10px;
+  }
+
+  .schedule-section__class-time {
+    margin: 0 0 12px;
+    font-size: 16px;
+  }
+
+  .schedule-section__day-name {
+    font-size: 20px;
+    margin: 0 0 15px;
+  }
+
+  .schedule-section__days-box {
+    grid-row-gap: 40px;
+  }
+
+  .schedule-section__exception-date {
+    margin: 0 0 15px;
+  }
+}
+
+@include phone-sm {
+  .schedule-section__filters {
+    flex-direction: column;
+  }
+
+  .schedule-section__reset-btn {
+    margin-top: 25px;
+    margin-left: 0;
+    width: 160px;
+  }
+
+  .schedule-section__reset-btn-text {
+    display: inline;
+    margin-left: 55px;
+  }
+
+  .schedule-section__reset-icon {
+    left: 30px;
+  }
+
+  .schedule-callback__title {
+    font-size: 16px;
+  }
 }
