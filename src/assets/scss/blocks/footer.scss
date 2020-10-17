@@ -36,8 +36,13 @@
 }
 
 .footer__soc-box-icon {
-  fill: #2E283D;
+  fill: $text-color;
   display: block;
+  transition: .25s fill ease;
+
+  &:hover {
+    fill: $brand-color;
+  }
 }
 
 @include tablet-sm {

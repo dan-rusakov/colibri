@@ -46,6 +46,11 @@
   font-weight: $semibold;
   margin: 0;
   letter-spacing: 0.1em;
+  transition: .25s color ease;
+
+  &:hover {
+    color: $brand-color;
+  }
 }
 
 .header__contact-btn {
@@ -58,6 +63,12 @@
   border-bottom: 2px solid $brand-color;
   padding-left: 10px;
   letter-spacing: 0.1em;
+  transition: .25s color ease, .25s border-color ease;
+
+  &:hover {
+    color: lighten($brand-color, 10%);
+    border-color: lighten($brand-color, 10%);
+  }
 }
 
 .header__burger {

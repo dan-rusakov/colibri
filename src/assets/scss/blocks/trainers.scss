@@ -61,9 +61,9 @@
   line-height: 1.15;
   letter-spacing: 0.05em;
   border-bottom: 2px solid transparent;
-  transition: .25s color ease, .25s border-color ease;
+  transition: .25s color ease;
 
   &:hover {
-    border-color: $brand-color;
+    color: lighten($brand-color, 10%);
   }
 }

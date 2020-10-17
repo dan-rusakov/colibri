@@ -76,6 +76,12 @@
   border-bottom: 2px solid $brand-color;
   padding-right: 10px;
   letter-spacing: 0.05em;
+  transition: .25s color ease, .25s border-color ease;
+
+  &:hover {
+    color: lighten($brand-color, 10%);
+    border-color: lighten($brand-color, 10%);
+  }
 }
 
 .about__gallery-btn {
@@ -97,7 +103,11 @@
 .about__gallery-btn-arrow {
   fill: $brand-color;
   opacity: 0;
-  transition: .25s opacity ease;
+  transition: .25s opacity ease, .25s fill ease;
+
+  &:hover {
+    fill: lighten($brand-color, 10%);
+  }
 }
 
 @include screen-md {

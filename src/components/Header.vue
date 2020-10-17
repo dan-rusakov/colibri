@@ -46,6 +46,8 @@
 </template>
 
 <script>
+  import 'focus-visible/dist/focus-visible.min.js';
+
   export default {
     name: 'Header',
     data() {

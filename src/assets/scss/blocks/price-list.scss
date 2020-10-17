@@ -85,6 +85,12 @@
   letter-spacing: 0.05em;
   align-self: center;
   padding-right: 10px;
+  transition: .25s color ease, .25s border-color ease;
+
+  &:hover {
+    color: lighten($brand-color, 10%);
+    border-color: lighten($brand-color, 10%);
+  }
 }
 
 .price-list__title {

@@ -41,9 +41,23 @@
   font-size: 16px;
   letter-spacing: 0.05em;
   line-height: 1.25;
+  transition: .25s color ease;
 
   &::placeholder {
     color: $gray;
+    transition: .25s color ease;
+  }
+
+  &:hover {
+    color: lighten($text-color, 30%);
+
+    &::placeholder {
+      color: lighten($gray, 15%);
+    }
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -58,6 +72,11 @@
   border: none;
   border-radius: 42px;
   background-color: $brand-color;
+  transition: .25s background-color ease;
+
+  &:hover {
+    background-color: lighten($brand-color, 10%);
+  }
 }
 
 @include screen-md {
