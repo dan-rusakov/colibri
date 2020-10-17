@@ -16,7 +16,25 @@
             <a href="#!" class="header__menu-url">Расписание и цены</a>
           </li>
         </ul>
-        <a href="#!" class="header__contact-btn">Связаться</a>
+        <button
+            class="header__contact-btn"
+            @click="openCallbackPopup"
+        >Связаться</button>
+        <transition name="fade">
+          <div
+              v-show="callbackPopupOpened"
+              class="callback-form-wrapper"
+              ref="callbackForm"
+              @click="closeCallbackPopup"
+          >
+            <form action="/" method="post" class="callback-form">
+              <p class="callback-form__title">Нужна помощь?</p>
+              <p class="callback-form__description">Оставьте заявку на обратный звонок</p>
+              <input type="text" class="callback-form__input" placeholder="Номер телефона" inputmode="numeric">
+              <button type="submit" class="callback-form__submit-btn">Отправить</button>
+            </form>
+          </div>
+        </transition>
       </nav>
       <button
           type="button"
@@ -38,7 +56,11 @@
               <a href="#!" class="header__mobile-menu-url">Расписание и цены</a>
             </li>
           </ul>
-          <a href="#!" class="header__contact-btn header__contact-btn--mobile">Связаться</a>
+          <button
+              type="button"
+              class="header__contact-btn header__contact-btn--mobile"
+              @click="openCallbackPopup"
+          >Связаться</button>
         </div>
       </transition>
     </div>
@@ -47,13 +69,29 @@
 
 <script>
   import 'focus-visible/dist/focus-visible.min.js';
+  import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
   export default {
     name: 'Header',
     data() {
       return {
         mobileMenuOpened: false,
+        callbackPopupOpened: false,
       }
-    }
+    },
+    methods: {
+      openCallbackPopup() {
+        this.callbackPopupOpened = true;
+        disableBodyScroll(this.$refs.callbackForm);
+        document.addEventListener('keyup', this.closeCallbackPopup);
+      },
+      closeCallbackPopup(evt) {
+        if (evt.key === 'Escape' || (evt.type === 'click' && !evt.target.closest('.callback-form'))) {
+          this.callbackPopupOpened = false;
+          enableBodyScroll(this.$refs.callbackForm);
+          document.removeEventListener('keyup', this.closeCallbackPopup);
+        }
+      },
+    },
   }
 </script>

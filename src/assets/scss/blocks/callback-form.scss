@@ -1,0 +1,99 @@
+.callback-form-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: rgba($text-color, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.callback-form {
+  background-color: $white;
+  width: 480px;
+  max-width: 100%;
+  border-radius: 20px;
+  padding: 43px 46px 41px;
+}
+
+.callback-form__title {
+  font-family: $font-family-base;
+  font-weight: $bold;
+  color: $text-color;
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  letter-spacing: 0.05em;
+}
+
+.callback-form__description {
+  font-family: $font-family-base;
+  font-weight: $bold;
+  color: $gray;
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 0 0 28px;
+  letter-spacing: 0.05em;
+}
+
+.callback-form__input {
+  padding: 12px 24px 10px;
+  background-color: $white;
+  border: 2px solid $brand-color;
+  border-radius: 42px;
+  display: block;
+  width: 100%;
+  max-width: 310px;
+  margin: 0 0 32px;
+  font-family: $font-family-base;
+  font-weight: $semibold;
+  color: $text-color;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  transition: .25s color ease;
+
+  &::placeholder {
+    color: $gray;
+    transition: .25s color ease;
+  }
+
+  &:hover {
+    color: lighten($text-color, 30%);
+
+    &::placeholder {
+      color: lighten($gray, 15%);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.callback-form__submit-btn {
+  font-family: $font-family-base;
+  font-weight: $semibold;
+  color: $white;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  padding: 11px 40px;
+  border: none;
+  border-radius: 42px;
+  background-color: $brand-color;
+  transition: .25s background-color ease;
+
+  &:hover {
+    background-color: lighten($brand-color, 10%);
+  }
+}
+
+@include phone-md {
+  .callback-form {
+    padding: 30px;
+  }
+}
