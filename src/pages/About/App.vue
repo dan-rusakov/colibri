@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <section class="about">
+    <section class="about about--about-page">
       <div class="about__wrapper">
         <div class="about__gallery about__gallery--multiline">
           <div class="swiper-container">
