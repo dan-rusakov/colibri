@@ -1,19 +1,23 @@
 <template>
   <header class="header">
     <div class="header__wrapper">
-      <a href="/" class="header__logo-url">
+      <router-link :to="{ name: 'Home'}" class="header__logo-url">
         <img src="../assets/img/logo.svg" alt="Колибри" class="header__logo">
-      </a>
+      </router-link>
       <nav class="header__navigation">
         <ul class="header__menu">
           <li class="header__menu-item">
-            <a href="/about" class="header__menu-url">О нас</a>
+            <router-link :to="{ name: 'About'}" class="header__menu-url">О нас</router-link>
           </li>
           <li class="header__menu-item">
-            <a href="/#services" class="header__menu-url">Услуги</a>
+            <router-link
+                :to="{ name: 'Home', hash: '#services'}"
+                @click.native="scrollFix('#services')"
+                class="header__menu-url"
+            >Услуги</router-link>
           </li>
           <li class="header__menu-item">
-            <a href="/schedule" class="header__menu-url">Расписание и цены</a>
+            <router-link :to="{ name: 'Schedule'}" class="header__menu-url">Расписание и цены</router-link>
           </li>
         </ul>
         <button
@@ -91,6 +95,9 @@
           enableBodyScroll(this.$refs.callbackForm);
           document.removeEventListener('keyup', this.closeCallbackPopup);
         }
+      },
+      scrollFix(hashbang) {
+        location.href = hashbang;
       },
     },
   }
