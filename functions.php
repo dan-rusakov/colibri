@@ -26,3 +26,48 @@ function load_vue_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'load_vue_scripts', 100 );
+
+/* ACF settings
+----------------------------------------- */
+
+function acf_load_trainer_select_field( $field ) {
+
+    $field['choices'] = array();
+	$field['choices']['unselected'] = '';
+
+    if( have_rows('trainers') ) {
+        while( have_rows('trainers') ) {
+
+            the_row();
+
+            $value = get_sub_field('trainer_name');
+            $field['choices'][ $value ] = $value;
+
+        }
+    }
+
+    return $field;
+}
+
+add_filter('acf/load_field/name=trainer_select', 'acf_load_trainer_select_field');
+
+function acf_load_group_select_field( $field ) {
+
+    $field['choices'] = array();
+	$field['choices']['unselected'] = '';
+
+    if( have_rows('groups') ) {
+        while( have_rows('groups') ) {
+
+            the_row();
+
+            $value = get_sub_field('group_name');
+            $field['choices'][ $value ] = $value;
+
+        }
+    }
+
+    return $field;
+}
+
+add_filter('acf/load_field/name=group_select', 'acf_load_group_select_field');
