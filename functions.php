@@ -71,3 +71,16 @@ function acf_load_group_select_field( $field ) {
 }
 
 add_filter('acf/load_field/name=group_select', 'acf_load_group_select_field');
+
+/* Hide menu items for manager
+----------------------------------------- */
+
+function hide_menu_items() {
+    if (!current_user_can('manage_options')) {
+        remove_menu_page('edit-comments.php');
+		remove_menu_page('edit.php');
+		remove_menu_page('tools.php');
+    }
+}
+
+add_action('admin_menu', 'hide_menu_items', 999);
