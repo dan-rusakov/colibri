@@ -61,6 +61,7 @@
     "focus-visible": "^5.2.0",
     "swiper": "^6.3.3",
     "vue": "^2.6",
-    "vue-multiselect": "^2.1.6"
+    "vue-multiselect": "^2.1.6",
+    "vue-smooth-reflow": "^0.1.12"
   }
 }

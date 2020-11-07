@@ -84,3 +84,33 @@ function hide_menu_items() {
 }
 
 add_action('admin_menu', 'hide_menu_items', 999);
+
+/* Emails sending
+----------------------------------------- */
+
+function feedback(WP_REST_Request $request)
+{
+    $phone = $request->get_param('phone');
+
+    if (empty($phone)) {
+        wp_send_json(['status' => 422, "message" => 'Нет номера телефона'], 422);
+    }
+
+    $email = 'kolibrigym@gmail.com';
+    $subject = 'Новая заявка с сайта';
+    $message_for_user = 'Номер телефона: ' . $phone;
+
+    wp_mail(
+        $email,
+        $subject,
+        $message_for_user,
+    );
+    wp_send_json(['status' => 200, 'data' => ['message' => 'Sent successfully']], 200);
+}
+
+add_action('rest_api_init', function () {
+    register_rest_route('api', '/feedback', array(
+        'methods' => 'POST',
+        'callback' => 'feedback',
+    ));
+});

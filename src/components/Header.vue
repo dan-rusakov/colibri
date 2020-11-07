@@ -31,11 +31,26 @@
               ref="callbackForm"
               @click="closeCallbackPopup"
           >
-            <form action="/" method="post" class="callback-form">
+            <form
+                :action="feedbackAction"
+                method="post"
+                class="callback-form"
+                @submit.prevent="submitFeedbackForm"
+            >
               <p class="callback-form__title">Нужна помощь?</p>
               <p class="callback-form__description">Оставьте заявку на обратный звонок</p>
-              <input type="text" class="callback-form__input" placeholder="Номер телефона" inputmode="numeric">
-              <button type="submit" class="callback-form__submit-btn">Отправить</button>
+              <input
+                  v-model="phone"
+                  type="text"
+                  class="callback-form__input"
+                  placeholder="Номер телефона"
+                  inputmode="numeric"
+              >
+              <button
+                  type="submit"
+                  class="callback-form__submit-btn"
+                  :disabled="feedbackSent"
+              >{{ feedbackSent ? 'Отправлено' : 'Отправить' }}</button>
             </form>
           </div>
         </transition>
@@ -74,6 +89,7 @@
 <script>
   import 'focus-visible/dist/focus-visible.min.js';
   import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+  import axios from "axios";
 
   export default {
     name: 'Header',
@@ -81,23 +97,59 @@
       return {
         mobileMenuOpened: false,
         callbackPopupOpened: false,
+        feedbackAction: '/wp-json/api/feedback',
+        feedbackSent: false,
+        phone: '',
       }
     },
     methods: {
       openCallbackPopup() {
         this.callbackPopupOpened = true;
-        disableBodyScroll(this.$refs.callbackForm);
+        disableBodyScroll(this.$refs.callbackForm, {
+          reserveScrollBarGap: true,
+        });
         document.addEventListener('keyup', this.closeCallbackPopup);
       },
       closeCallbackPopup(evt) {
         if (evt.key === 'Escape' || (evt.type === 'click' && !evt.target.closest('.callback-form'))) {
           this.callbackPopupOpened = false;
-          enableBodyScroll(this.$refs.callbackForm);
           document.removeEventListener('keyup', this.closeCallbackPopup);
+
+          setTimeout(() => {
+            enableBodyScroll(this.$refs.callbackForm, {
+              reserveScrollBarGap: true,
+            });
+          }, 350);
         }
       },
       scrollFix(hashbang) {
         location.href = hashbang;
+      },
+      submitFeedbackForm() {
+        if (!this.phone) return;
+
+        axios.post(this.feedbackAction, {
+          phone: this.phone,
+        })
+          .then(() => {
+            this.feedbackSent = true;
+            this.phone = '';
+            this.callbackPopupOpened = false;
+
+            setTimeout(() => {
+              enableBodyScroll(this.$refs.callbackForm, {
+                reserveScrollBarGap: true,
+              });
+            }, 350);
+          })
+          .catch(error => {
+            if (!error.response) {
+              this.errors.phone = 'Ошибка сети. Проверьте ваше подключение к интернету.';
+              console.log(error);
+            } else {
+              this.errors.phone = error.response.data.message || error.message;
+            }
+          })
       },
     },
   }
