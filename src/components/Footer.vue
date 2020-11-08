@@ -12,21 +12,39 @@
       </p>
       <ul class="footer__soc-box">
         <li class="footer__soc-box-item">
-          <a href="#!" class="footer__soc-box-url">
+          <a
+            href="https://vk.com/colibri_kids_gym"
+            class="footer__soc-box-url"
+            target="_blank"
+            rel="noopener nofollow"
+            aria-label="Группа ВК"
+          >
             <svg width="26" height="26" class="footer__soc-box-icon">
               <use xlink:href="#icon-vk" />
             </svg>
           </a>
         </li>
         <li class="footer__soc-box-item">
-          <a href="#!" class="footer__soc-box-url">
+          <a
+            href="#!"
+            сlass="footer__soc-box-url"
+            target="_blank"
+            rel="noopener nofollow"
+            aria-label="Чат Whatsapp"
+          >
             <svg width="26" height="26" class="footer__soc-box-icon">
               <use xlink:href="#icon-whatsapp" />
             </svg>
           </a>
         </li>
         <li class="footer__soc-box-item">
-          <a href="#!" class="footer__soc-box-url">
+          <a
+            href="https://www.instagram.com/colibri.kids.gym/"
+            сlass="footer__soc-box-url"
+            target="_blank"
+            rel="noopener nofollow"
+            aria-label="Аккаунт инстаграм"
+          >
             <svg width="26" height="26" class="footer__soc-box-icon">
               <use xlink:href="#icon-instagram" />
             </svg>
