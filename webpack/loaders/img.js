@@ -1,10 +1,10 @@
 module.exports = {
-  test: /\.(doc|docx|pdf|xls|xlsx)$/,
+  test: /\.(png|svg|jpg|gif|jpeg)$/,
   use: [
     {
       loader: 'file-loader',
       options: {
-        name: 'files/[name].[ext]?v=[hash]',
+        name: 'img/[name].[ext]?v=[hash]',
         publicPath: '/wp-content/themes/colibri/dist',
       },
     },

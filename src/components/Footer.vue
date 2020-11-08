@@ -1,7 +1,15 @@
 <template>
   <footer class="footer">
     <div class="footer__wrapper">
-      <p class="footer__copyright">© 2020</p>
+      <p class="footer__copyright">
+        <a
+            :href="`${require('../assets/files/legal-info.docx')}`"
+            class="footer__legal-info"
+            target="_blank"
+            rel="noopener nofollow"
+        >Юридическая информация</a>
+        © 2020
+      </p>
       <ul class="footer__soc-box">
         <li class="footer__soc-box-item">
           <a href="#!" class="footer__soc-box-url">

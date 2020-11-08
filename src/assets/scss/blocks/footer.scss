@@ -45,12 +45,31 @@
   }
 }
 
+.footer__legal-info {
+  font-family: $font-family-base;
+  font-weight: $semibold;
+  font-size: 20px;
+  color: $brand-color;
+  line-height: 1.2;
+  margin: 0;
+  border-bottom: 2px solid transparent;
+  transition: .25s border-color ease;
+
+  &:hover {
+    border-color: $brand-color;
+  }
+}
+
 @include tablet-sm {
   .footer__soc-box-item {
-    margin-left: 15px;
+    margin-left: 12px;
   }
 
   .footer__copyright {
+    font-size: 18px;
+  }
+
+  .footer__legal-info {
     font-size: 18px;
   }
 
@@ -60,5 +79,25 @@
 
   .footer {
     padding-bottom: 20px;
+  }
+}
+
+@include phone-lg {
+  .footer__wrapper {
+    flex-direction: column;
+  }
+
+  .footer__copyright {
+    margin-bottom: 20px;
+  }
+}
+
+@include phone-sm {
+  .footer__copyright {
+    font-size: 16px;
+  }
+
+  .footer__legal-info {
+    font-size: 16px;
   }
 }
