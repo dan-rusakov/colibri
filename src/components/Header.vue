@@ -66,13 +66,17 @@
         <div class="header__mobile-menu-wrap" v-if="mobileMenuOpened">
           <ul class="header__mobile-menu">
             <li class="header__mobile-menu-item">
-              <a href="/about" class="header__mobile-menu-url">О нас</a>
+              <router-link :to="{ name: 'About'}" class="header__mobile-menu-url">О нас</router-link>
             </li>
             <li class="header__mobile-menu-item">
-              <a href="/#services" class="header__mobile-menu-url">Услуги</a>
+              <router-link
+                  :to="{ name: 'Home', hash: '#services'}"
+                  @click.native="scrollFix('#services')"
+                  class="header__mobile-menu-url"
+              >Услуги</router-link>
             </li>
             <li class="header__mobile-menu-item">
-              <a href="/schedule" class="header__mobile-menu-url">Расписание и цены</a>
+              <router-link :to="{ name: 'Schedule'}" class="header__mobile-menu-url">Расписание и цены</router-link>
             </li>
           </ul>
           <button
