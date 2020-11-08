@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="about about--about-page" v-if="pageContent.acf?.description_line.length">
+    <section class="about about--about-page" v-if="pageContent.acf && pageContent.acf.description_line.length">
       <div class="about__wrapper">
         <div class="about__gallery about__gallery--multiline">
           <div class="swiper-container">
@@ -56,7 +56,7 @@
         </div>
       </div>
     </section>
-    <section class="trainers" v-show="pageContent.acf?.trainers?.length">
+    <section class="trainers" v-show="pageContent.acf && pageContent.acf.trainers.length">
       <div class="trainers__wrapper">
         <h2 class="trainers__title">Наши тренера</h2>
         <ul class="trainers__list">

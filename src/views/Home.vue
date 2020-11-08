@@ -6,17 +6,17 @@
         <ul class="welcome-section__contacts">
           <li
               class="welcome-section__contacts-item"
-              v-if="pageContent.acf?.address"
+              v-if="pageContent.acf && pageContent.acf.address"
           >—  {{ pageContent.acf.address }}</li>
           <li
               class="welcome-section__contacts-item"
-              v-if="pageContent.acf?.phone"
+              v-if="pageContent.acf && pageContent.acf.phone"
           >—  {{ pageContent.acf.phone }}</li>
         </ul>
         <img src="../assets/img/ribbon.png" alt="Лента" class="welcome-section__ribbon">
       </div>
     </section>
-    <section class="about" v-if="pageContent.acf?.gallery">
+    <section class="about" v-if="pageContent.acf && pageContent.acf.gallery">
       <div class="about__wrapper">
         <div class="about__gallery">
           <div class="swiper-container">
@@ -37,13 +37,15 @@
             </button>
           </div>
         </div>
-        <div class="about__content" v-html="pageContent.acf?.description_text" />
+        <template v-if="pageContent.acf && pageContent.acf.description_text">
+          <div class="about__content" v-html="pageContent.acf.description_text" />
+        </template>
       </div>
     </section>
-    <section class="services" id="services" v-if="pageContent.acf?.services">
+    <section class="services" id="services" v-if="pageContent.acf && pageContent.acf.services">
       <div class="services__wrapper">
         <article class="service" v-for="service in pageContent.acf.services">
-          <img :src="service?.icon.url" :alt="service?.icon.alt" class="service__icon" width="60" height="60">
+          <img :src="service.icon.url" :alt="service.icon.alt" class="service__icon" width="60" height="60">
           <h4 class="service__title">{{ service.title }}</h4>
           <p class="service__text">{{ service.text }}</p>
         </article>
