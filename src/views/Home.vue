@@ -4,13 +4,19 @@
       <div class="welcome-section__wrapper">
         <h1 class="welcome-section__title">Гимнастами не рождаются – ими становятся</h1>
         <ul class="welcome-section__contacts">
-          <li class="welcome-section__contacts-item">—  {{ pageContent.acf.address }}</li>
-          <li class="welcome-section__contacts-item">—  {{ pageContent.acf.phone }}</li>
+          <li
+              class="welcome-section__contacts-item"
+              v-if="pageContent.acf?.address"
+          >—  {{ pageContent.acf.address }}</li>
+          <li
+              class="welcome-section__contacts-item"
+              v-if="pageContent.acf?.phone"
+          >—  {{ pageContent.acf.phone }}</li>
         </ul>
         <img src="../assets/img/ribbon.png" alt="Лента" class="welcome-section__ribbon">
       </div>
     </section>
-    <section class="about">
+    <section class="about" v-if="pageContent.acf?.gallery">
       <div class="about__wrapper">
         <div class="about__gallery">
           <div class="swiper-container">
@@ -31,19 +37,19 @@
             </button>
           </div>
         </div>
-        <div class="about__content" v-html="pageContent.acf.description_text" />
+        <div class="about__content" v-html="pageContent.acf?.description_text" />
       </div>
     </section>
-    <section class="services" id="services">
+    <section class="services" id="services" v-if="pageContent.acf?.services">
       <div class="services__wrapper">
         <article class="service" v-for="service in pageContent.acf.services">
-          <img :src="service.icon.url" :alt="service.icon.alt" class="service__icon" width="60" height="60">
+          <img :src="service?.icon.url" :alt="service?.icon.alt" class="service__icon" width="60" height="60">
           <h4 class="service__title">{{ service.title }}</h4>
           <p class="service__text">{{ service.text }}</p>
         </article>
       </div>
     </section>
-    <section class="price-list price-list--home-page">
+    <section class="price-list price-list--home-page" v-if="priceList">
       <div class="price-list__wrapper">
         <ul class="price-list__list">
           <li class="price-list__item" v-for="priceItem in priceList">
@@ -92,7 +98,7 @@
         return this.page('schedule');
       },
       priceList() {
-        return this.schedulePage.acf.price_list
+        return this.schedulePage.acf?.price_list
           ? this.schedulePage.acf.price_list.filter((item, index) => index < 3)
           : [];
       }
