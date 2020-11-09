@@ -26,7 +26,7 @@
         </li>
         <li class="footer__soc-box-item">
           <a
-            href="#!"
+            href="https://wa.me/79068020802"
             сlass="footer__soc-box-url"
             target="_blank"
             rel="noopener nofollow"
