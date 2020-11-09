@@ -98,10 +98,14 @@
 </template>
 
 <script>
-  import Swiper from 'swiper';
-  import 'swiper/swiper-bundle.css';
+  import { Swiper, Navigation, EffectFade, Autoplay } from 'swiper';
+  import 'swiper/swiper.scss';
+  import 'swiper/components/effect-fade/effect-fade.scss';
+  import 'swiper/components/navigation/navigation.scss';
   import { mapGetters } from 'vuex';
   import smoothReflow from 'vue-smooth-reflow';
+
+  Swiper.use([Navigation, EffectFade, Autoplay]);
 
   export default {
     name: 'About',
@@ -127,8 +131,8 @@
     },
     methods: {
       swiperInit() {
-        this.swiper = new Swiper('.about__gallery', {
-          loop: true,
+        this.swiper = new Swiper('.about__gallery .swiper-container', {
+          loop: false,
           effect: 'fade',
           autoplay: {
             delay: 3500,

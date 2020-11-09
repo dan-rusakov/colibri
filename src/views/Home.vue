@@ -25,12 +25,12 @@
                 <img class="about__gallery-img" :src="galleryItem.image" alt="Фото студии гимнастики">
               </div>
             </div>
-            <button class="about__gallery-btn about__gallery-btn--left">
+            <button class="about__gallery-btn about__gallery-btn--left" type="button">
               <svg class="about__gallery-btn-arrow" width="30" height="30">
                 <use xlink:href="#icon-arrow-left" />
               </svg>
             </button>
-            <button class="about__gallery-btn about__gallery-btn--right">
+            <button class="about__gallery-btn about__gallery-btn--right" type="button">
               <svg class="about__gallery-btn-arrow" width="30" height="30">
                 <use xlink:href="#icon-arrow-left" />
               </svg>
@@ -78,9 +78,13 @@
 </template>
 
 <script>
-  import { Swiper } from 'swiper';
-  import 'swiper/swiper-bundle.css';
+  import { Swiper, Navigation, EffectFade, Autoplay } from 'swiper';
+  import 'swiper/swiper.scss';
+  import 'swiper/components/effect-fade/effect-fade.scss';
+  import 'swiper/components/navigation/navigation.scss';
   import { mapGetters } from 'vuex';
+
+  Swiper.use([Navigation, EffectFade, Autoplay]);
 
   export default {
     name: 'Home',
@@ -107,8 +111,7 @@
     },
     methods: {
       swiperInit() {
-        this.swiper = new Swiper('.about__gallery', {
-          loop: true,
+        this.swiper = new Swiper('.about__gallery .swiper-container', {
           effect: 'fade',
           autoplay: {
             delay: 3500,
