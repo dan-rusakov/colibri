@@ -44,11 +44,27 @@
     </section>
     <section class="services" id="services" v-if="pageContent.acf && pageContent.acf.services">
       <div class="services__wrapper">
-        <article class="service" v-for="service in pageContent.acf.services">
-          <img :src="service.icon.url" :alt="service.icon.alt" class="service__icon" width="60" height="60">
-          <h4 class="service__title">{{ service.title }}</h4>
-          <p class="service__text">{{ service.text }}</p>
-        </article>
+        <div class="services__gallery">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <article class="swiper-slide service" v-for="service in pageContent.acf.services">
+                <img :src="service.icon.url" :alt="service.icon.alt" class="service__icon" width="60" height="60">
+                <h4 class="service__title">{{ service.title }}</h4>
+                <p class="service__text">{{ service.text }}</p>
+              </article>
+            </div>
+          </div>
+          <button class="services__gallery-btn services__gallery-btn--left" type="button">
+            <svg class="services__gallery-btn-arrow" width="40" height="40">
+              <use xlink:href="#icon-arrow-left" />
+            </svg>
+          </button>
+          <button class="services__gallery-btn services__gallery-btn--right" type="button">
+            <svg class="services__gallery-btn-arrow" width="40" height="40">
+              <use xlink:href="#icon-arrow-left" />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
     <section class="price-list price-list--home-page" v-if="priceList">
@@ -110,7 +126,7 @@
       }
     },
     methods: {
-      swiperInit() {
+      aboutSwiperInit() {
         this.swiper = new Swiper('.about__gallery .swiper-container', {
           effect: 'fade',
           autoplay: {
@@ -122,12 +138,38 @@
           },
         })
       },
+      servicesSwiperInit() {
+        this.swiper = new Swiper('.services .swiper-container', {
+          loop: true,
+          spaceBetween: 20,
+          autoplay: {
+            delay: 3500,
+          },
+          slidesPerView: 1,
+          navigation: {
+            prevEl: '.services__gallery-btn--left',
+            nextEl: '.services__gallery-btn--right',
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+            },
+            602: {
+              slidesPerView: 2,
+            },
+            992: {
+              slidesPerView: 3,
+            },
+          },
+        })
+      },
       scrollFix(hashbang) {
         location.href = hashbang;
       },
     },
     mounted() {
-      this.swiperInit();
+      this.aboutSwiperInit();
+      this.servicesSwiperInit();
     }
   };
 </script>
