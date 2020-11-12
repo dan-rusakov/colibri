@@ -284,12 +284,14 @@
       },
       timeList() {
         if (this.pageContent.acf?.schedule) {
-          const timeList = this.pageContent.acf.schedule.map((item, index) => {
+          let timeList = this.pageContent.acf.schedule.map((item, index) => {
             return {
               id: index,
               time: item.schedule_time,
             }
           });
+
+          timeList = timeList.filter((item, index) => timeList.findIndex(subItem => subItem.time === item.time) === index);
 
           return timeList.sort((a, b) => a.time.localeCompare(b.time));
         } else {
