@@ -25,12 +25,12 @@
                 <img class="about__gallery-img" :src="galleryItem.image" alt="Фото студии гимнастики">
               </div>
             </div>
-            <button class="about__gallery-btn about__gallery-btn--left" type="button">
+            <button class="about__gallery-btn about__gallery-btn--left" type="button" aria-label="Предыдущее изображение">
               <svg class="about__gallery-btn-arrow" width="30" height="30">
                 <use xlink:href="#icon-arrow-left" />
               </svg>
             </button>
-            <button class="about__gallery-btn about__gallery-btn--right" type="button">
+            <button class="about__gallery-btn about__gallery-btn--right" type="button" aria-label="Следующее изображение">
               <svg class="about__gallery-btn-arrow" width="30" height="30">
                 <use xlink:href="#icon-arrow-left" />
               </svg>
@@ -54,12 +54,12 @@
               </article>
             </div>
           </div>
-          <button class="services__gallery-btn services__gallery-btn--left" type="button">
+          <button class="services__gallery-btn services__gallery-btn--left" type="button" aria-label="Предыдущая услуга">
             <svg class="services__gallery-btn-arrow" width="40" height="40">
               <use xlink:href="#icon-arrow-left" />
             </svg>
           </button>
-          <button class="services__gallery-btn services__gallery-btn--right" type="button">
+          <button class="services__gallery-btn services__gallery-btn--right" type="button" aria-label="Следующая услуга">
             <svg class="services__gallery-btn-arrow" width="40" height="40">
               <use xlink:href="#icon-arrow-left" />
             </svg>
