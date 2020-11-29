@@ -246,6 +246,8 @@
   margin: 0 30px 0 0;
   line-height: 1.25;
   width: 120px;
+  flex-shrink: 0;
+  text-align: center;
 }
 
 .schedule-section__class-name {
