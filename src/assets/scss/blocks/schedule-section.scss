@@ -280,6 +280,16 @@
   letter-spacing: 0.05em;
 }
 
+.schedule-section__hashtag {
+  font-family: $font-family-base;
+  font-weight: $bold;
+  color: $brand-color;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  margin: 7px 0 0;
+  line-height: 1.25;
+}
+
 @include screen-md {
   .schedule-section__days-box {
     grid-template-columns: 1fr 1fr;

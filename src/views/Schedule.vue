@@ -29,7 +29,7 @@
               </multiselect>
             </div>
             <div class="schedule-section__filter">
-              <p class="schedule-section__filter-name">Группа</p>
+              <p class="schedule-section__filter-name">Направление</p>
               <multiselect
                   v-model="groupValue"
                   :options="groupList"
@@ -119,6 +119,7 @@
                 <div class="schedule-section__class-text-box">
                   <p class="schedule-section__class-name">{{ schedule.group_select }}</p>
                   <p class="schedule-section__trainer-name">{{ schedule.trainer_select }}</p>
+                  <p class="schedule-section__hashtag" v-if="schedule.hashtag">{{ schedule.hashtag }}</p>
                 </div>
               </li>
             </ul>
@@ -131,6 +132,7 @@
                 <div class="schedule-section__class-text-box">
                   <p class="schedule-section__class-name">{{ schedule.group_select }}</p>
                   <p class="schedule-section__trainer-name">{{ schedule.trainer_select }}</p>
+                  <p class="schedule-section__hashtag" v-if="schedule.hashtag">{{ schedule.hashtag }}</p>
                 </div>
               </li>
             </ul>
@@ -143,6 +145,7 @@
                 <div class="schedule-section__class-text-box">
                   <p class="schedule-section__class-name">{{ schedule.group_select }}</p>
                   <p class="schedule-section__trainer-name">{{ schedule.trainer_select }}</p>
+                  <p class="schedule-section__hashtag" v-if="schedule.hashtag">{{ schedule.hashtag }}</p>
                 </div>
               </li>
             </ul>
@@ -155,6 +158,7 @@
                 <div class="schedule-section__class-text-box">
                   <p class="schedule-section__class-name">{{ schedule.group_select }}</p>
                   <p class="schedule-section__trainer-name">{{ schedule.trainer_select }}</p>
+                  <p class="schedule-section__hashtag" v-if="schedule.hashtag">{{ schedule.hashtag }}</p>
                 </div>
               </li>
             </ul>
@@ -167,6 +171,7 @@
                 <div class="schedule-section__class-text-box">
                   <p class="schedule-section__class-name">{{ schedule.group_select }}</p>
                   <p class="schedule-section__trainer-name">{{ schedule.trainer_select }}</p>
+                  <p class="schedule-section__hashtag" v-if="schedule.hashtag">{{ schedule.hashtag }}</p>
                 </div>
               </li>
             </ul>
@@ -179,6 +184,7 @@
                 <div class="schedule-section__class-text-box">
                   <p class="schedule-section__class-name">{{ schedule.group_select }}</p>
                   <p class="schedule-section__trainer-name">{{ schedule.trainer_select }}</p>
+                  <p class="schedule-section__hashtag" v-if="schedule.hashtag">{{ schedule.hashtag }}</p>
                 </div>
               </li>
             </ul>
@@ -191,6 +197,7 @@
                 <div class="schedule-section__class-text-box">
                   <p class="schedule-section__class-name">{{ schedule.group_select }}</p>
                   <p class="schedule-section__trainer-name">{{ schedule.trainer_select }}</p>
+                  <p class="schedule-section__hashtag" v-if="schedule.hashtag">{{ schedule.hashtag }}</p>
                 </div>
               </li>
             </ul>
