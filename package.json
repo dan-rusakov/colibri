@@ -1,11 +1,6 @@
 {
   "name": "colibri-site",
   "version": "1.0.0",
-  "repository": {
-    "type": "https://github.com/dan3439/colibri-wp",
-    "url": "https://github.com/dan3439/colibri-wp"
-  },
-  "author": "Dan Rusakov <dan-rusakov@mail.ru>",
   "license": "ISC",
   "private": true,
   "scripts": {
