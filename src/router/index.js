@@ -23,6 +23,11 @@ const router = new Router({
       name: 'Schedule',
       component: () => import(/* webpackChunkName: "schedule" */ '../views/Schedule.vue'),
     },
+    {
+      path: '/documents',
+      name: 'Documents',
+      component: () => import(/* webpackChunkName: "documents" */ '../views/Documents.vue'),
+    },
   ],
   mode: 'history',
   base: '',

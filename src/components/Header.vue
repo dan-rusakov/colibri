@@ -19,6 +19,9 @@
           <li class="header__menu-item">
             <router-link :to="{ name: 'Schedule'}" class="header__menu-url">Расписание и цены</router-link>
           </li>
+          <li class="header__menu-item">
+            <router-link :to="{ name: 'Documents'}" class="header__menu-url">Документы</router-link>
+          </li>
         </ul>
         <button
             class="header__contact-btn"
@@ -77,6 +80,9 @@
             </li>
             <li class="header__mobile-menu-item">
               <router-link :to="{ name: 'Schedule'}" class="header__mobile-menu-url">Расписание и цены</router-link>
+            </li>
+            <li class="header__mobile-menu-item">
+              <router-link :to="{ name: 'Documents'}" class="header__mobile-menu-url">Документы</router-link>
             </li>
           </ul>
           <button

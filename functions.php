@@ -76,10 +76,17 @@ add_filter('acf/load_field/name=group_select', 'acf_load_group_select_field');
 ----------------------------------------- */
 
 function hide_menu_items() {
-    if (!current_user_can('manage_options')) {
+	$current_user = wp_get_current_user();
+	
+    if ($current_user->user_login === 'manager') {
         remove_menu_page('edit-comments.php');
 		remove_menu_page('edit.php');
 		remove_menu_page('tools.php');
+		remove_menu_page('themes.php');
+		remove_menu_page('plugins.php');
+		remove_menu_page('options-general.php');
+		remove_menu_page('users.php');
+		remove_menu_page('edit.php?post_type=acf-field-group');
     }
 }
 

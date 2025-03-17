@@ -120,9 +120,9 @@
         return this.page('schedule');
       },
       priceList() {
-        return this.schedulePage.acf?.price_list
+        return this.schedulePage.acf ? this.schedulePage.acf.price_list
           ? this.schedulePage.acf.price_list.filter((item, index) => index < 3)
-          : [];
+          : [] : [];
       }
     },
     methods: {

@@ -274,23 +274,23 @@
         return this.page('schedule');
       },
       trainersList() {
-        return this.pageContent.acf?.trainers
+        return this.pageContent.acf ? this.pageContent.acf.trainers
           ? this.pageContent.acf.trainers.map((item, index) => {
             item.id = index;
             return item;
           })
-          : [];
+          : [] : [];
       },
       groupList() {
-        return this.pageContent.acf?.groups
+        return this.pageContent.acf ? this.pageContent.acf.groups
           ? this.pageContent.acf.groups.map((item, index) => {
             item.id = index;
             return item;
           })
-          : [];
+          : [] : [];
       },
       timeList() {
-        if (this.pageContent.acf?.schedule) {
+        if (this.pageContent.acf && this.pageContent.acf.schedule) {
           let timeList = this.pageContent.acf.schedule.map((item, index) => {
             return {
               id: index,

@@ -8,7 +8,7 @@
             target="_blank"
             rel="noopener nofollow"
         >Юридическая информация</a>
-        © 2020
+        © 2025
       </p>
       <ul class="footer__soc-box">
         <li class="footer__soc-box-item">
