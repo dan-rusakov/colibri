@@ -3,12 +3,12 @@
     <div class="footer__wrapper">
       <p class="footer__copyright">
         <a
-            :href="`${require('../assets/files/legal-info.docx')}`"
+            :href="`${require('../assets/files/legal-info.pdf')}`"
             class="footer__legal-info"
             target="_blank"
             rel="noopener nofollow"
         >Юридическая информация</a>
-        © 2025
+        © {{ currentYear }}
       </p>
       <ul class="footer__soc-box">
         <li class="footer__soc-box-item">
@@ -58,5 +58,10 @@
 <script>
   export default {
     name: 'Footer',
+    data() {
+      return {
+        currentYear: new Date().getFullYear(),
+      }
+    },
   }
 </script>

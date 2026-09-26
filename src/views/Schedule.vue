@@ -217,6 +217,7 @@
                 placeholder="Номер телефона"
                 inputmode="numeric"
             >
+            <consent-checkbox v-model="consent" />
             <button type="submit" class="schedule-callback__submit-btn" :disabled="feedbackSent">
               {{ feedbackSent ? 'Отправлено' : 'Отправить' }}
             </button>
@@ -249,11 +250,13 @@
   import 'vue-multiselect/dist/vue-multiselect.min.css';
   import { mapGetters } from 'vuex';
   import axios from 'axios';
+  import ConsentCheckbox from '../components/ConsentCheckbox.vue';
 
   export default {
     name: 'Schedule',
     components: {
       Multiselect,
+      ConsentCheckbox,
     },
     data() {
       return {
@@ -264,6 +267,7 @@
         feedbackAction: '/wp-json/api/feedback',
         feedbackSent: false,
         phone: '',
+        consent: false,
       }
     },
     computed: {
@@ -346,14 +350,16 @@
         return this.filteredSchedule.filter(item => item.week_day === day);
       },
       submitFeedbackForm() {
-        if (!this.phone) return;
+        if (!this.phone || !this.consent) return;
 
         axios.post(this.feedbackAction, {
           phone: this.phone,
+          consent: this.consent,
         })
           .then(() => {
             this.feedbackSent = true;
             this.phone = '';
+            this.consent = false;
           })
           .catch(error => {
             if (!error.response) {

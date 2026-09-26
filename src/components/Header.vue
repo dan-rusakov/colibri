@@ -49,6 +49,7 @@
                   placeholder="Номер телефона"
                   inputmode="numeric"
               >
+              <consent-checkbox v-model="consent" />
               <button
                   type="submit"
                   class="callback-form__submit-btn"
@@ -100,9 +101,13 @@
   import 'focus-visible/dist/focus-visible.min.js';
   import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
   import axios from "axios";
+  import ConsentCheckbox from './ConsentCheckbox.vue';
 
   export default {
     name: 'Header',
+    components: {
+      ConsentCheckbox,
+    },
     data() {
       return {
         mobileMenuOpened: false,
@@ -110,6 +115,7 @@
         feedbackAction: '/wp-json/api/feedback',
         feedbackSent: false,
         phone: '',
+        consent: false,
       }
     },
     methods: {
@@ -136,14 +142,16 @@
         location.href = hashbang;
       },
       submitFeedbackForm() {
-        if (!this.phone) return;
+        if (!this.phone || !this.consent) return;
 
         axios.post(this.feedbackAction, {
           phone: this.phone,
+          consent: this.consent,
         })
           .then(() => {
             this.feedbackSent = true;
             this.phone = '';
+            this.consent = false;
             this.callbackPopupOpened = false;
 
             setTimeout(() => {

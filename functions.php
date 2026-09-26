@@ -98,14 +98,19 @@ add_action('admin_menu', 'hide_menu_items', 999);
 function feedback(WP_REST_Request $request)
 {
     $phone = $request->get_param('phone');
+    $consent = $request->get_param('consent');
 
     if (empty($phone)) {
         wp_send_json(['status' => 422, "message" => 'Нет номера телефона'], 422);
     }
 
+    if (empty($consent)) {
+        wp_send_json(['status' => 422, "message" => 'Нет согласия на обработку персональных данных'], 422);
+    }
+
     $email = 'kolibrigym@gmail.com';
     $subject = 'Новая заявка с сайта';
-    $message_for_user = 'Номер телефона: ' . $phone;
+    $message_for_user = 'Номер телефона: ' . $phone . "\n" . 'Согласие на обработку персональных данных: получено';
 
     wp_mail(
         $email,
